@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.E.E.S. - Believers For Engaging Every Soul</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f8f6f0 0%, #fff8e7 100%);
+        }
+
+        .page {
+            min-height: 100vh;
+            padding: 60px 40px;
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .page-content {
+            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 2px solid #d4a574;
+            position: relative;
+        }
+
+        .page-footer {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #e0d4c7;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .main-title {
+            font-size: 3em;
+            color: #8b6914;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            color: #d4a574;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .animated-title {
+            font-size: 1.2em;
+            color: #8b6914;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cycling-word {
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+            color: #d4a574;
+            font-weight: 600;
+            animation: fadeInOut 3s infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 20% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+            80%, 100% { opacity: 1; }
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            color: #8b6914;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '🐝';
+            display: block;
+            font-size: 0.6em;
+            margin-top: 10px;
+        }
+
+        .symbolism-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .symbolism-item {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #d4a574;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .symbolism-item h3 {
+            color: #8b6914;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .verse {
+            background: linear-gradient(135deg, #fff8e7 0%, #f8f6f0 100%);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 2px solid #e0d4c7;
+            position: relative;
+            font-size: 1.1em;
+        }
+
+        .verse::before {
+            content: '"';
+            font-size: 4em;
+            color: #d4a574;
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            opacity: 0.3;
+        }
+
+        .verse-text {
+            font-style: italic;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+
+        .verse-reference {
+            text-align: right;
+            font-weight: 600;
+            color: #8b6914;
+            font-size: 0.95em;
+        }
+
+        .mission-statement {
+            background: rgba(139, 105, 20, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid #d4a574;
+        }
+
+        .mission-statement p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .discord-section {
+            background: linear-gradient(135deg, #7289da 0%, #5865f2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .discord-link {
+            display: inline-block;
+            background: white;
+            color: #5865f2;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .discord-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .rules-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rules-list li {
+            background: rgba(255, 255, 255, 0.8);
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #d4a574;
+        }
+
+        .rules-list li strong {
+            color: #8b6914;
+            font-size: 1.1em;
+        }
+
+        .bee-decoration {
+            font-size: 2em;
+            margin: 0 10px;
+            animation: buzz 2s infinite;
+        }
+
+        @keyframes buzz {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-5deg) scale(1.1); }
+            75% { transform: rotate(5deg) scale(1.1); }
+        }
+
+        .honeycomb-pattern {
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(212, 165, 116, 0.1) 0%, transparent 50%);
+            background-size: 60px 60px;
+        }
+
+        @media print {
+            .page {
+                page-break-after: always;
+                margin: 0;
+                padding: 40px;
+            }
+            
+            .page-content {
+                max-width: none;
+            }
+            
+            .animated-title, .cycling-word {
+                animation: none;
+            }
+            
+            .bee-decoration {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .symbolism-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page {
+                padding: 40px 20px;
+            }
+            
+            .main-title {
+                font-size: 2.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Title and Introduction -->
+    <div class="page honeycomb-pattern">
+        <div class="page-content">
+            <div class="page-header">
+                <h1 class="main-title">B.E.E.S.</h1>
+                <p class="subtitle">A Missionary Community</p>
+                <div class="animated-title">
+                    Believers For <span class="cycling-word" id="cyclingWord">Engaging</span> Every Soul
+                </div>
+            </div>
+
+            <div class="mission-statement">
+                <p><strong>Our Mission:</strong> To live in community, serve God's Kingdom with one purpose, and bring spiritual nourishment to every corner of the earth.</p>
+                <p>Like bees who work together to build their hive and spread life, we are called to spread the Gospel and plant new spiritual homes wherever God leads us.</p>
+            </div>
+
+            <div class="verse">
+                <div class="verse-text">"For the earth will be filled with the knowledge of the glory of the Lord as the waters cover the sea."</div>
+                <div class="verse-reference">— Habakkuk 2:14</div>
+            </div>
+
+            <div class="discord-section">
+                <h3>🐝 Join Our Community</h3>
+                <p>Connect with fellow missionary kids and believers around the world!</p>
+                <a href="https://discord.gg/WEpr9nFSv9" class="discord-link" target="_blank">Join B.E.E.S. Discord</a>
+            </div>
+        </div>
+        
+        <div class="page-footer">
+            <p>B.E.E.S. Community | Believers For Engaging Every Soul | Page 1</p>
+        </div>
+    </div>
+
+    <!-- Page 2: Biblical Symbolism -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <h2 class="section-title">Biblical Symbolism of B.E.E.S.</h2>
+            </div>
+
+            <div class="symbolism-grid">
+                <div class="symbolism-item">
+                    <h3>🏠 Community & Unity</h3>
+                    <p>Bees live in perfect harmony, each serving the whole. As missionaries, we work together in unity, supporting one another in God's Kingdom work.</p>
+                </div>
+
+                <div class="symbolism-item">
+                    <h3>🍯 Gospel Sweetness</h3>
+                    <p>Honey represents the sweetness of God's Word. We carry this spiritual nourishment to those who hunger and thirst for righteousness.</p>
+                </div>
+
+                <div class="symbolism-item">
+                    <h3>✈️ Purposeful Mission</h3>
+                    <p>Bees swarm to new places to build and spread life. We travel to spread the Gospel and establish new spiritual communities.</p>
+                </div>
+
+                <div class="symbolism-item">
+                    <h3>🛡️ Divine Protection</h3>
+                    <p>Like the unified swarm, we find strength in our community and in God's protective power over our mission work.</p>
+                </div>
+            </div>
+
+            <div class="verse">
+                <div class="verse-text">"Gracious words are like a honeycomb, sweetness to the soul and health to the body."</div>
+                <div class="verse-reference">— Proverbs 16:24</div>
+            </div>
+
+            <div class="verse">
+                <div class="verse-text">"My son, eat honey, for it is good, and the drippings of the honeycomb are sweet to your taste. Know that wisdom is such to your soul; if you find it, there will be a future, and your hope will not be cut off."</div>
+                <div class="verse-reference">— Proverbs 24:13-14</div>
+            </div>
+        </div>
+        
+        <div class="page-footer">
+            <p>B.E.E.S. Community | Biblical Foundation | Page 2</p>
+        </div>
+    </div>
+
+    <!-- Page 3: Supporting Verses -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <h2 class="section-title">Our Foundation in Scripture</h2>
+            </div>
+
+            <div class="verse">
+                <div class="verse-text">"Two are better than one, because they have a good return for their labor: If either of them falls down, one can help the other up."</div>
+                <div class="verse-reference">— Ecclesiastes 4:9-10</div>
+            </div>
+
+            <div class="verse">
+                <div class="verse-text">"The fear of the Lord is pure, enduring forever. The decrees of the Lord are firm, and all of them are righteous. They are more precious than gold, than much pure gold; they are sweeter than honey, than honey from the honeycomb."</div>
+                <div class="verse-reference">— Psalm 19:9-10</div>
+            </div>
+
+            <div class="verse">
+                <div class="verse-text">"Perfume and incense bring joy to the heart, and the pleasantness of a friend springs from their heartfelt advice."</div>
+                <div class="verse-reference">— Proverbs 27:9</div>
+            </div>
+
+            <div class="verse">
+                <div class="verse-text">"And let us consider how we may spur one another on toward love and good deeds, not giving up meeting together, as some are in the habit of doing, but encouraging one another—and all the more as you see the Day approaching."</div>
+                <div class="verse-reference">— Hebrews 10:24-25</div>
+            </div>
+
+            <div class="verse">
+                <div class="verse-text">"And my God will meet all your needs according to the riches of his glory in Christ Jesus."</div>
+                <div class="verse-reference">— Philippians 4:19</div>
+            </div>
+        </div>
+        
+        <div class="page-footer">
+            <p>B.E.E.S. Community | Scripture Foundation | Page 3</p>
+        </div>
+    </div>
+
+    <!-- Page 4: Community Guidelines -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <h2 class="section-title">Community Guidelines</h2>
+                <p class="subtitle">Keeping Our Hive Healthy</p>
+            </div>
+
+            <div class="verse">
+                <div class="verse-text">"Let your conversation be always full of grace, seasoned with salt, so that you may know how to answer everyone."</div>
+                <div class="verse-reference">— Colossians 4:6</div>
+            </div>
+
+            <ul class="rules-list">
+                <li>
+                    <strong>🤝 Respect Everyone</strong><br>
+                    Treat others with kindness, patience, and respect. No bullying, gossip, or hateful speech of any kind.
+                </li>
+                
+                <li>
+                    <strong>✨ Keep it Clean</strong><br>
+                    No inappropriate language, images, or conversations. This includes suggestive jokes or offensive content.
+                </li>
+                
+                <li>
+                    <strong>✝️ Faith-Centered Community</strong><br>
+                    While we can talk about all kinds of topics, remember this is a Christian space. Encourage, build up, and reflect Christ in your words.
+                </li>
+                
+                <li>
+                    <strong>🔒 Privacy Matters</strong><br>
+                    Don't share other people's personal information without permission. Be wise with your own info too.
+                </li>
+                
+                <li>
+                    <strong>🙏 Encourage One Another</strong><br>
+                    Pray for each other, share burdens, and celebrate victories together as the body of Christ.
+                </li>
+            </ul>
+
+            <div class="mission-statement">
+                <p><strong>Our Heart:</strong> This community exists to connect missionary kids and believers around the world, to remind us we aren't alone, and to glorify God in our friendships, stories, and everyday life.</p>
+                <span class="bee-decoration">🐝</span>
+                <span class="bee-decoration">🐝</span>
+                <span class="bee-decoration">🐝</span>
+            </div>
+        </div>
+        
+        <div class="page-footer">
+            <p>B.E.E.S. Community | Community Guidelines | Page 4</p>
+        </div>
+    </div>
+
+    <script>
+        // Cycling words animation
+        const words = ['Engaging', 'Encouraging', 'Empowering', 'Evangelizing', 'Embracing', 'Equipping', 'Edifying', 'Elevating'];
+        let currentIndex = 0;
+        const cyclingWordElement = document.getElementById('cyclingWord');
+
+        function cycleWords() {
+            cyclingWordElement.textContent = words[currentIndex];
+            currentIndex = (currentIndex + 1) % words.length;
+        }
+
+        // Change word every 3 seconds
+        setInterval(cycleWords, 3000);
+        
+        // Initialize with first word
+        cycleWords();
+    </script>
+</body>
+</html>
