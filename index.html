@@ -74,21 +74,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        .cycling-word {
-            display: inline-block;
-            min-width: 120px;
-            text-align: center;
-            color: #d4a574;
-            font-weight: 600;
-            animation: fadeInOut 3s infinite;
-        }
-
-        @keyframes fadeInOut {
-            0%, 20% { opacity: 1; }
-            25%, 75% { opacity: 0; }
-            80%, 100% { opacity: 1; }
-        }
-
         .section-title {
             font-size: 2.2em;
             color: #8b6914;
@@ -96,6 +81,16 @@
             text-align: center;
             position: relative;
         }
+
+        .cycling-word {
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+            color: #d4a574;
+            font-weight: 600;
+            transition: opacity 0.5s ease;
+            opacity: 1;
+        }        
 
         .section-title::after {
             content: '🐝';
@@ -440,21 +435,26 @@
     </div>
 
     <script>
-        // Cycling words animation
         const words = ['Engaging', 'Encouraging', 'Empowering', 'Evangelizing', 'Embracing', 'Equipping', 'Edifying', 'Elevating'];
         let currentIndex = 0;
         const cyclingWordElement = document.getElementById('cyclingWord');
-
+    
         function cycleWords() {
-            cyclingWordElement.textContent = words[currentIndex];
-            currentIndex = (currentIndex + 1) % words.length;
+            // Fade out
+            cyclingWordElement.style.opacity = 0;
+    
+            // Wait for fade-out to finish, then change word and fade back in
+            setTimeout(() => {
+                cyclingWordElement.textContent = words[currentIndex];
+                cyclingWordElement.style.opacity = 1;
+                currentIndex = (currentIndex + 1) % words.length;
+            }, 500); // Matches CSS transition time
         }
-
-        // Change word every 3 seconds
-        setInterval(cycleWords, 3000);
-        
-        // Initialize with first word
+    
+        // Start the loop
         cycleWords();
+        setInterval(cycleWords, 3000);
     </script>
+    
 </body>
 </html>
